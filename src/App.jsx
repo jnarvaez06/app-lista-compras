@@ -12,15 +12,14 @@ function App() {
 
 	const fetchItems = async () => {
 		try {
-		  const response = await fetch(`${BACKEND}/Item/`,{
-			mode: 'no-cors'
-		  });
+		  const response = await fetch(`${BACKEND}/Item/`);
 		  const data = await response.json();
 		  setItems(data);
 		} catch (error) {
 		  console.log('Error fetching data:', error);
+		  console.log(error);
 		}
-	  };
+	};
 
 	useEffect(() => {
 		fetchItems();
