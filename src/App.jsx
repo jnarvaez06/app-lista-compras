@@ -12,7 +12,9 @@ function App() {
 
 	const fetchItems = async () => {
 		try {
-		  const response = await fetch(`${BACKEND}/Item/`);
+		  const response = await fetch(`${BACKEND}/Item/`,{
+			mode: 'no-cors'
+		  });
 		  const data = await response.json();
 		  setItems(data);
 		} catch (error) {
